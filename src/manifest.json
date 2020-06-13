@@ -1,0 +1,19 @@
+{
+  "name": "My Extension",
+  "version": "1.0.0",
+  "description": "Description here",
+  "manifest_version": 2,
+  "permissions": ["webNavigation", "tabs"],
+  "page_action": {
+    "default_popup": "index.html"
+  },
+  "background": {
+    "scripts": ["background.js", "runtime.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.github.com/*"],
+      "js": ["contentScript.js", "runtime.js"]
+    }
+  ]
+}
